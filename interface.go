@@ -12,8 +12,7 @@ type Animal struct {
 	Name string
 }
 
-
-// ini artinya mengimplementasikan interface dari HasName GetName karena 
+// ini artinya mengimplementasikan interface dari HasName GetName karena
 // tipe retrunnya sama;
 func (person Person) GetName() string {
 	return person.Name
@@ -23,19 +22,18 @@ func (person Person) GetName() string {
 // implementasi dari sebuah interface cukup kalo retrunnya sama maka artinya dia sudah mengimplementasikan
 // sebuah interface
 func (animal Animal) GetName() string {
-    return animal.Name
+	return animal.Name
 }
-
 
 func SayHello(value HasName) {
 	fmt.Printf("Hello %s \n", value.GetName())
 }
 
 func main() {
-	person:= Person{"Eko"}
+	person := Person{"Eko"}
 
-	SayHello(person);
+	SayHello(person)
 
-	animal:= Animal{Name : "Kucing"}
-	SayHello(animal);
+	animal := Animal{Name: "Kucing"}
+	SayHello(animal)
 }
